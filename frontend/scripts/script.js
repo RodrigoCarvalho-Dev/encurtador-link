@@ -16,12 +16,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 headers: {
                     'Content-Type': 'application/json'
                 },
-                body: JSON.stringify({ url: url })
+                body: JSON.stringify({ originalURL: url })
             })
             .then(response => response.json())
             .then(data => {
-                if (data.shortenedUrl) {
-                    resultContainer.innerHTML = `<p>Shortened URL: <a href="${data.shortenedUrl}" target="_blank">${data.shortenedUrl}</a></p>`;
+                if (data.shortURL) {
+                    resultContainer.innerHTML = `<p>Shortened URL: <a href="${data.shortURL}" target="_blank">${data.shortURL}</a></p>`;
                 } else {
                     resultContainer.innerHTML = '<p>Error shortening the URL. Please try again.</p>';
                 }
